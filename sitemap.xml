@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/About-This-Site/</loc>
-    
-    <lastmod>2019-06-02T17:36:58.173Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://benmitchinson.com/Computer-Comfort-Year-3/</loc>
     
     <lastmod>2019-06-02T17:36:58.173Z</lastmod>
@@ -23,7 +16,14 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/all-archives/index.html</loc>
+    <loc>https://benmitchinson.com/About-This-Site/</loc>
+    
+    <lastmod>2019-06-02T17:36:58.173Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://benmitchinson.com/all-tags/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/all-tags/index.html</loc>
+    <loc>https://benmitchinson.com/all-archives/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Playground-News/</loc>
+    <loc>https://benmitchinson.com/Photo-Frame/</loc>
     
     <lastmod>2019-05-24T18:01:52.725Z</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Photo-Frame/</loc>
+    <loc>https://benmitchinson.com/Playground-News/</loc>
     
     <lastmod>2019-05-24T18:01:52.725Z</lastmod>
     
