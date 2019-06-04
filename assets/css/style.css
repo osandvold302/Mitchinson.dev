@@ -6761,11 +6761,11 @@ blockquote {
   text-decoration: none; }
 
 .btn--default {
-  color: #9eabb3 !important;
-  border: 1px solid #9eabb3; }
+  color: #349ef3 !important;
+  border: 1px solid #349ef3; }
   .btn--default:hover {
-    color: #738691 !important;
-    border: 1px solid #738691; }
+    color: #0c78ce !important;
+    border: 1px solid #0c78ce; }
 
 .btn--success {
   color: #4dc657 !important;
