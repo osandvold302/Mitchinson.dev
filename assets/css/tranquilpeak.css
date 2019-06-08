@@ -177,6 +177,7 @@ abbr {
 blockquote {
   border-left: 3px solid #5d686f;
   padding: 0 15px;
+  font-size: 1.3em;
   font-style: italic;
   margin: 1.5em 0 0; }
   blockquote cite:before {
