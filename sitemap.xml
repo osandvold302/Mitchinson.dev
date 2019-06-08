@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://benmitchinson.com/About-This-Site/</loc>
+    <loc>https://benmitchinson.com/Device-Advice/</loc>
     
-    <lastmod>2019-06-08T19:28:33.628Z</lastmod>
+    <lastmod>2019-06-08T19:31:44.242Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Device-Advice/</loc>
+    <loc>https://benmitchinson.com/About-This-Site/</loc>
     
-    <lastmod>2019-06-08T19:23:38.133Z</lastmod>
+    <lastmod>2019-06-08T19:30:45.988Z</lastmod>
     
   </url>
   
@@ -37,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/all-archives/index.html</loc>
-    
-    <lastmod>2019-05-24T18:01:52.726Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://benmitchinson.com/Software-Design/</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
@@ -58,7 +51,14 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Playground-News/</loc>
+    <loc>https://benmitchinson.com/all-archives/index.html</loc>
+    
+    <lastmod>2019-05-24T18:01:52.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://benmitchinson.com/Laserphonic/</loc>
     
     <lastmod>2019-05-24T18:01:52.725Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Laserphonic/</loc>
+    <loc>https://benmitchinson.com/Alexa-Bus-Tracker/</loc>
     
     <lastmod>2019-05-24T18:01:52.725Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://benmitchinson.com/Alexa-Bus-Tracker/</loc>
+    <loc>https://benmitchinson.com/Playground-News/</loc>
     
     <lastmod>2019-05-24T18:01:52.725Z</lastmod>
     
