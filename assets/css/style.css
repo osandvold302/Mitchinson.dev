@@ -5588,6 +5588,7 @@ blockquote {
     margin: 15px auto;
     border-radius: 3px;
     padding: 30px 0;
+    cursor: initial;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
