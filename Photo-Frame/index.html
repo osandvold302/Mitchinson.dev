@@ -15,7 +15,7 @@
         <link rel="icon" href="https://mitchinson.dev/assets/images/favicon.ico">
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Mitchinson","sameAs":["https://github.com/bmitchinson","https://twitter.com/115bwm/","mailto:mitchinson.dev@gmail.com","https://www.linkedin.com/in/ben-mitchinson","hhttps://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf"],"image":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg"},"articleBody":"This year for Mother’s Day, I decided to take an old digital photo frame we had lying around the house, and throw in some improvements. Originally, the frame had a small amount of internal memory, and could store low-resolution images loaded in from a flash drive. The process of moving files over was tedious, and I wanted anyone in my family to be able to easily contribute to the rotation of photos. Going away from school, I thought it would be neat to be able to easily update the frame with new photos, no matter where my siblings were in the world.\n\n\nSolution ● GithubInside now is a Raspberry Pi running OSMC on an HD display, with a python script running in the background to download new photos from a dedicated Gmail account. From there, OSMC transitions through them all to display. The frame is also enabled with SSH at home, so while I’m at school, I can perform remote updates and mass file transfers to update large amounts of photos manually.\n\n\nWhat I learned + potential improvements This being one of my first personal side projects, interacting with the Gmail API for the first time resulted in a really satisfying final result. The ability of anyone to be able to either email the address, or even send a photo through SMS to it, and know that it would be displayed within the next 15 minutes, felt very impressive for the little python work required.\n\nIdeally, I would have preferred to run a more appropriate OS, and just manually create a GUI solution to iterating through the photos, as opposed to having to use everything that comes with OSMC, just to use its wallpaper feature. That being said, it’s funny to send YouTube videos to it, including active streams of live events.\n\nThere’s also more ideas for improvements of the script located in the issues on my GitHub repo, and I’m always happy to view updates and requests. \n\n\nScript\n  dlAttachments.pypython12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# Referenced http://stackoverflow.com/questions/348630/how-can-i-download-all-emails-with-attachments-from-gmail# Make sure you have IMAP enabled in your gmail settings.# See / create issues on github.com/bmitchinson/raspberry-pi-photo-frameimport sysimport imaplibimport emailimport email.headerimport datetimeimport os# All pictures downloaded to \"/Attachments\" by defaultdetach_dir = '.'if 'Attachments' not in os.listdir(detach_dir):    os.mkdir('Attachments')# Replace *username* and *password*EMAIL_ACCOUNT = \"*USERNAME*@gmail.com\"EMAIL_PASSWORD = \"*PASSWORD*\"# Use a dedicated folder if desired, otherwise leave as \"INBOX\" to search inboxEMAIL_FOLDER = \"INBOX\"try:    imapSession = imaplib.IMAP4_SSL('imap.gmail.com')    typ, accountDetails = imapSession.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)    if typ != 'OK':        print('Not able to sign in!')        raise    imapSession.select('INBOX')    typ, data = imapSession.search(None, 'ALL')    if typ != 'OK':        print('Error searching Inbox.')        raise    # Iterating over all emails    for msgId in data[0].split():        typ, messageParts = imapSession.fetch(msgId, '(RFC822)')        if typ != 'OK':            print('Error fetching mail.')            raise        emailBody = messageParts[0][1]        mail = email.message_from_bytes(emailBody)        for part in mail.walk():            if part.get_content_maintype() == 'multipart':                continue            if part.get('Content-Disposition') is None:                continue            fileName = part.get_filename()            if bool(fileName):                filePath = os.path.join(detach_dir, 'Attachments', fileName)                if not os.path.isfile(filePath) :                    print(fileName)                    fp = open(filePath, 'wb')                    fp.write(part.get_payload(decode=True))                    fp.close()    imapSession.close()    imapSession.logout()    except:    print('Not able to download all attachments.')\n\n\nGallery","dateCreated":"2017-05-14T13:00:00-05:00","dateModified":"2019-06-10T13:01:39-05:00","datePublished":"2017-05-14T13:00:00-05:00","description":"This year for Mother’s Day, I decided to take an old digital photo frame we had lying around the house, and throw in some improvements. Originally, the frame had a small amount of internal memory, and could store low-resolution images loaded in from a flash drive. The process of moving files over was tedious, and I wanted anyone in my family to be able to easily contribute to the rotation of photos. Going away from school, I thought it would be neat to be able to easily update the frame with new photos, no matter where my siblings were in the world.\n","headline":"Mother's Day Photo Frame","image":["https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive,r_50:5/v1547059571/Projects/PhotoFrame/frameThumbnail.jpg","https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1546666566/Projects/PhotoFrame/photoframe.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://mitchinson.dev/Photo-Frame/"},"publisher":{"@type":"Organization","name":"Ben Mitchinson","sameAs":["https://github.com/bmitchinson","https://twitter.com/115bwm/","mailto:mitchinson.dev@gmail.com","https://www.linkedin.com/in/ben-mitchinson","hhttps://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf"],"image":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg","logo":{"@type":"ImageObject","url":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg"}},"url":"https://mitchinson.dev/Photo-Frame/","keywords":"Python, Raspberry Pi","thumbnailUrl":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive,r_50:5/v1547059571/Projects/PhotoFrame/frameThumbnail.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Mitchinson","sameAs":["https://github.com/bmitchinson","https://twitter.com/115bwm/","mailto:mitchinson.dev@gmail.com","https://www.linkedin.com/in/ben-mitchinson","https://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf"],"image":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg"},"articleBody":"This year for Mother’s Day, I decided to take an old digital photo frame we had lying around the house, and throw in some improvements. Originally, the frame had a small amount of internal memory, and could store low-resolution images loaded in from a flash drive. The process of moving files over was tedious, and I wanted anyone in my family to be able to easily contribute to the rotation of photos. Going away from school, I thought it would be neat to be able to easily update the frame with new photos, no matter where my siblings were in the world.\n\n\nSolution ● GithubInside now is a Raspberry Pi running OSMC on an HD display, with a python script running in the background to download new photos from a dedicated Gmail account. From there, OSMC transitions through them all to display. The frame is also enabled with SSH at home, so while I’m at school, I can perform remote updates and mass file transfers to update large amounts of photos manually.\n\n\nWhat I learned + potential improvements This being one of my first personal side projects, interacting with the Gmail API for the first time resulted in a really satisfying final result. The ability of anyone to be able to either email the address, or even send a photo through SMS to it, and know that it would be displayed within the next 15 minutes, felt very impressive for the little python work required.\n\nIdeally, I would have preferred to run a more appropriate OS, and just manually create a GUI solution to iterating through the photos, as opposed to having to use everything that comes with OSMC, just to use its wallpaper feature. That being said, it’s funny to send YouTube videos to it, including active streams of live events.\n\nThere’s also more ideas for improvements of the script located in the issues on my GitHub repo, and I’m always happy to view updates and requests. \n\n\nScript\n  dlAttachments.pypython12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# Referenced http://stackoverflow.com/questions/348630/how-can-i-download-all-emails-with-attachments-from-gmail# Make sure you have IMAP enabled in your gmail settings.# See / create issues on github.com/bmitchinson/raspberry-pi-photo-frameimport sysimport imaplibimport emailimport email.headerimport datetimeimport os# All pictures downloaded to \"/Attachments\" by defaultdetach_dir = '.'if 'Attachments' not in os.listdir(detach_dir):    os.mkdir('Attachments')# Replace *username* and *password*EMAIL_ACCOUNT = \"*USERNAME*@gmail.com\"EMAIL_PASSWORD = \"*PASSWORD*\"# Use a dedicated folder if desired, otherwise leave as \"INBOX\" to search inboxEMAIL_FOLDER = \"INBOX\"try:    imapSession = imaplib.IMAP4_SSL('imap.gmail.com')    typ, accountDetails = imapSession.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)    if typ != 'OK':        print('Not able to sign in!')        raise    imapSession.select('INBOX')    typ, data = imapSession.search(None, 'ALL')    if typ != 'OK':        print('Error searching Inbox.')        raise    # Iterating over all emails    for msgId in data[0].split():        typ, messageParts = imapSession.fetch(msgId, '(RFC822)')        if typ != 'OK':            print('Error fetching mail.')            raise        emailBody = messageParts[0][1]        mail = email.message_from_bytes(emailBody)        for part in mail.walk():            if part.get_content_maintype() == 'multipart':                continue            if part.get('Content-Disposition') is None:                continue            fileName = part.get_filename()            if bool(fileName):                filePath = os.path.join(detach_dir, 'Attachments', fileName)                if not os.path.isfile(filePath) :                    print(fileName)                    fp = open(filePath, 'wb')                    fp.write(part.get_payload(decode=True))                    fp.close()    imapSession.close()    imapSession.logout()    except:    print('Not able to download all attachments.')\n\n\nGallery","dateCreated":"2017-05-14T13:00:00-05:00","dateModified":"2019-06-10T13:01:39-05:00","datePublished":"2017-05-14T13:00:00-05:00","description":"This year for Mother’s Day, I decided to take an old digital photo frame we had lying around the house, and throw in some improvements. Originally, the frame had a small amount of internal memory, and could store low-resolution images loaded in from a flash drive. The process of moving files over was tedious, and I wanted anyone in my family to be able to easily contribute to the rotation of photos. Going away from school, I thought it would be neat to be able to easily update the frame with new photos, no matter where my siblings were in the world.\n","headline":"Mother's Day Photo Frame","image":["https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive,r_50:5/v1547059571/Projects/PhotoFrame/frameThumbnail.jpg","https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1546666566/Projects/PhotoFrame/photoframe.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://mitchinson.dev/Photo-Frame/"},"publisher":{"@type":"Organization","name":"Ben Mitchinson","sameAs":["https://github.com/bmitchinson","https://twitter.com/115bwm/","mailto:mitchinson.dev@gmail.com","https://www.linkedin.com/in/ben-mitchinson","https://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf"],"image":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg","logo":{"@type":"ImageObject","url":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1532150487/BenMitchinson.com/profile.jpg"}},"url":"https://mitchinson.dev/Photo-Frame/","keywords":"Python, Raspberry Pi","thumbnailUrl":"https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive,r_50:5/v1547059571/Projects/PhotoFrame/frameThumbnail.jpg"}</script>
     <meta name="description" content="This year for Mother’s Day, I decided to take an old digital photo frame we had lying around the house, and throw in some improvements. Originally, the frame had a small amount of internal memory, and">
 <meta name="keywords" content="Raspberry Pi,Python,Photo Frame,Digital,Smart Frame,Smart Photo Frame,Frame,Photo">
 <meta property="og:type" content="blog">
@@ -81,7 +81,7 @@
         
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-5srwjfm1f4hpi9x7wxzxxygv6dsvt6ovfuyfgmpvfzmjpniquqwhdj5gjwjk.min.css">
+    <link rel="stylesheet" href="/assets/css/style-mldbfvq1ydg1yaz6xfxyfly4i9l3lciftjcq22qw4tjd7mcerd0epkdb6c60.min.css">
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131573158-1"></script>
@@ -256,7 +256,7 @@
             
                 <li class="sidebar-button">
                     
-                        <a  class="sidebar-button-link " href="hhttps://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf" target="_blank" rel="noopener" title="Resume">
+                        <a  class="sidebar-button-link " href="https://res.cloudinary.com/dheqbiqti/image/upload/v1560565433/Documents/Resume.pdf" target="_blank" rel="noopener" title="Resume">
                     
                         <i class="sidebar-button-icon fas fa-file-pdf" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">Resume</span>
@@ -345,7 +345,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Original electronics ready to be removed, and replaced with an HD screen"
                     title="Original electronics ready to be removed, and replaced with an HD screen"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545531/Projects/PhotoFrame/IMG_0229.jpg"
@@ -363,7 +363,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Guts removed"
                     title="Guts removed"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545531/Projects/PhotoFrame/IMG_0234.jpg"
@@ -381,7 +381,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="New screen in"
                     title="New screen in"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545531/Projects/PhotoFrame/IMG_0237.jpg"
@@ -399,7 +399,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Working screen"
                     title="Working screen"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545532/Projects/PhotoFrame/IMG_0250.jpg"
@@ -412,7 +412,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Attaching buttons"
                     title="Attaching buttons"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545531/Projects/PhotoFrame/IMG_0238.jpg"
@@ -425,7 +425,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Configuring OSMC on the Pi"
                     title="Configuring OSMC on the Pi"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545533/Projects/PhotoFrame/IMG_0279.jpg"
@@ -438,7 +438,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Writing the script"
                     title="Writing the script"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545532/Projects/PhotoFrame/IMG_0275.jpg"
@@ -451,7 +451,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Some final testing"
                     title="Some final testing"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545533/Projects/PhotoFrame/IMG_0281.jpg"
@@ -464,7 +464,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Less than ideal skotch tape reassembly"
                     title="Less than ideal skotch tape reassembly"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545533/Projects/PhotoFrame/IMG_0290.jpg"
@@ -477,7 +477,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption="Final placement! Mom loved it"
                     title="Final placement! Mom loved it"
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1544545534/Projects/PhotoFrame/IMG_0405.jpg"
@@ -490,7 +490,7 @@ There’s also more ideas for improvements of the script located in <a href="htt
             <div class="photo-box">
                 <a
                     class="photo-box-inner fancybox"
-                    data-fancybox="gallery-cjwwwgz2x000eojv4zev85rku"
+                    data-fancybox="gallery-cjwx03jyi000blev480bozxt3"
                     data-caption=""
                     title=""
                     href="https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive/v1546666566/Projects/PhotoFrame/photoframe.jpg"
@@ -857,7 +857,7 @@ Our goal was to help kids increase their literary ability, learn relevant topics
         
 <div id="cover" style="background-image:url('https://res.cloudinary.com/dheqbiqti/image/upload/fl_progressive,c_scale,w_0.5/v1532152643/BenMitchinson.com/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-ftwclxd6llydc4bbly5eno0v4cdi3o2rsj7nym1pdjkg3ddb58jd4wlme4aw.min.js"></script>
+<script src="/assets/js/script-yzv3fo1rwofmxfintwmofzgrbcw2e8r4j9enlxolflp3ss1xy5ah5cnrwvqi.min.js"></script>
 <!--SCRIPTS END-->
 
     
