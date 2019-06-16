@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mitchinson.dev/Embedded-Systems/</loc>
+    
+    <lastmod>2019-06-16T22:03:42.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
+    
+    <lastmod>2019-06-16T01:43:44.980Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mitchinson.dev/Device-Advice/</loc>
     
     <lastmod>2019-06-15T17:07:19.854Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://mitchinson.dev/Software-Design/</loc>
     
     <lastmod>2019-06-15T17:03:26.987Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
-    
-    <lastmod>2019-06-15T01:30:12.693Z</lastmod>
     
   </url>
   
@@ -44,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Laserphonic/</loc>
-    
-    <lastmod>2019-06-10T18:01:39.050Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mitchinson.dev/Alexa-Bus-Tracker/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
@@ -59,6 +59,13 @@
   
   <url>
     <loc>https://mitchinson.dev/Photo-Frame/</loc>
+    
+    <lastmod>2019-06-10T18:01:39.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/Laserphonic/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
     
