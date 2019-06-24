@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mitchinson.dev/Embedded-Systems/</loc>
+    
+    <lastmod>2019-06-24T19:34:19.018Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mitchinson.dev/Current-Projects/</loc>
     
     <lastmod>2019-06-24T19:21:33.299Z</lastmod>
@@ -30,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Embedded-Systems/</loc>
-    
-    <lastmod>2019-06-18T03:12:57.534Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mitchinson.dev/Device-Advice/</loc>
     
     <lastmod>2019-06-15T17:07:19.854Z</lastmod>
@@ -51,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Playground-News/</loc>
-    
-    <lastmod>2019-06-10T18:01:39.051Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mitchinson.dev/Video-Tag-Demo/index.html</loc>
     
     <lastmod>2019-06-10T18:01:39.051Z</lastmod>
@@ -65,7 +58,14 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Laserphonic/</loc>
+    <loc>https://mitchinson.dev/Playground-News/</loc>
+    
+    <lastmod>2019-06-10T18:01:39.051Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/Photo-Frame/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
     
@@ -79,21 +79,21 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Photo-Frame/</loc>
+    <loc>https://mitchinson.dev/Laserphonic/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/all-archives/index.html</loc>
+    <loc>https://mitchinson.dev/all-tags/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/all-tags/index.html</loc>
+    <loc>https://mitchinson.dev/all-archives/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
