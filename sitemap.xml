@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mitchinson.dev/Embedded-Systems/</loc>
+    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
     
-    <lastmod>2019-06-18T03:02:36.621Z</lastmod>
+    <lastmod>2019-06-24T19:17:09.334Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
+    <loc>https://mitchinson.dev/Current-Projects/</loc>
     
-    <lastmod>2019-06-16T01:43:44.980Z</lastmod>
+    <lastmod>2019-06-24T18:58:57.247Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/About-This-Site/</loc>
+    
+    <lastmod>2019-06-24T18:54:37.817Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/Alexa-Bus-Tracker/</loc>
+    
+    <lastmod>2019-06-18T03:16:55.175Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mitchinson.dev/Embedded-Systems/</loc>
+    
+    <lastmod>2019-06-18T03:12:57.534Z</lastmod>
     
   </url>
   
@@ -30,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/About-This-Site/</loc>
-    
-    <lastmod>2019-06-15T01:17:53.248Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mitchinson.dev/Playground-News/</loc>
     
     <lastmod>2019-06-10T18:01:39.051Z</lastmod>
@@ -51,14 +65,7 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Laserphonic/</loc>
-    
-    <lastmod>2019-06-10T18:01:39.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mitchinson.dev/Alexa-Bus-Tracker/</loc>
+    <loc>https://mitchinson.dev/Computer-Comfort-Year-3/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
     
@@ -72,16 +79,9 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Computer-Comfort-Year-3/</loc>
+    <loc>https://mitchinson.dev/Laserphonic/</loc>
     
     <lastmod>2019-06-10T18:01:39.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mitchinson.dev/Current-Projects/</loc>
-    
-    <lastmod>2019-06-08T18:38:57.494Z</lastmod>
     
   </url>
   
