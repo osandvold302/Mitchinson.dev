@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
+    
+    <lastmod>2019-07-01T17:23:06.644Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mitchinson.dev/Street-Smart/</loc>
     
     <lastmod>2019-07-01T00:51:50.913Z</lastmod>
@@ -58,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/Hy-Vee-Internship/</loc>
-    
-    <lastmod>2019-06-24T19:17:09.334Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mitchinson.dev/Device-Advice/</loc>
     
     <lastmod>2019-06-15T17:07:19.854Z</lastmod>
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/all-archives/index.html</loc>
+    <loc>https://mitchinson.dev/all-tags/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://mitchinson.dev/all-tags/index.html</loc>
+    <loc>https://mitchinson.dev/all-archives/index.html</loc>
     
     <lastmod>2019-05-24T18:01:52.726Z</lastmod>
     
